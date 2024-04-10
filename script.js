@@ -90,7 +90,11 @@ function onClickItem(e) {
   if (e.target.parentElement.classList.contains('remove-item')) {
     removeItem(e.target.parentElement.parentElement);
   } else {
-    setItemToEdit(e.target);
+    if (e.target === document.querySelector('ul')) {
+      return;
+    } else {
+      setItemToEdit(e.target);
+    }
   }
 }
 
